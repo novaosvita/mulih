@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preload" href="./assets/fonts/Rubik.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/rubik-semi-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Poppins_medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Poppins.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Poppins-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Poppins-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/Poppins-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Home Page</title>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1793543472687"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1793543472687">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" data-fls-header-scroll="100" class="header">
+				<!-- <header data-fls-header data-fls-header-scroll="100" data-fls-header-scroll-show class="header"></header> -->
+				<!--
+data-fls-header-scroll-show цю властивість прибрала,
+т.я. не працює в браузері, ДИВ.Документація_Розділ "ХЕДЕР"
+-->
+				<div class="header__container">
+					<!-- додаємо обгортку haeder__body для меню -->
+					<div class="header__body">
+						<!--
+===== УМОВА застосування логотипу: якщо ми на головній сторінці, то логотип - без посилання,
+а якщо на іншій, то має link
+-->
+						<!-- ----------------------------------------------------------------------- -->
+						<!-- ===== КОНСТРУКЦІЯ ЛОГОТИПУ -->
+						<img class="header__logo" src="./assets/img/logo.svg" alt="Logo Mulih">
+						<!-- ------------------------------------------------------- -->
+						<!-- ===== НОТАТКИ: -->
+						<!-- ця запис "'true' === 'true'" значить, що ми НА ГОЛОВНІЙ сторінці, де немає посилання на логотипі -->
+						<!-- if condition - це "якщо умова виконується", що на логотипі немає <a> -->
+						<!-- в іншому випадку, тобто ми НА ІНШІЙ сторінці - то ЛОГОТИП - буде, як посилання "header__link-log" -->
+						<!-- else - це значить "інакше" -->
+						<!-- ===== Підключаємо МЕНЮ:menu.html -->
+						<div class="header__menu menu">
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a href="#home" class="menu__link menu__link--active">Home</a>
+									</li>
+									<li class="menu__item">
+										<a href="#discover" class="menu__link">Discover</a>
+									</li>
+									<li class="menu__item">
+										<a href="#advantes-block" class="menu__link">Advantes</a>
+									</li>
+									<li class="menu__item">
+										<a href="#about-us" class="menu__link">About</a>
+									</li>
+									<li class="menu__item">
+										<a href="#about-say" class="menu__link">Reviews</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+						<!-- Це КНОПКИ в меню додаткоdі -->
+						<div class="header__blockbutton">
+							<a href="#" data-fls-button="" class="button button--signin">Sign in</a>
+							<a href="#" data-fls-button="" class="button button--login">Login</a>
+						</div>
+						<!-- ------------------------------ -->
+						<!-- Це кнопка бургера для мобільного, її перенесено з файлу menu.html -->
+						<!-- це окремий незалежний компонент, а не елемент header у BEM-структурі. -->
+						<button type="button" data-fls-menu="" class="icon-menu">
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<!-- <div data-fls-index class="index"></div> -->
+				<!-- ============= БЛОК HERO_SECTION -->
+				<main class="page page--home">
+					<!-- ====== 1- HERO-секція ===== -->
+					<section id="hero" class="page__hero hero">
+						<div class="hero__container">
+							<div class="hero__content">
+								<!-- ГОТОВИЙ БЛОК з компонененту -->
+								<!-- 1 ====== ГОЛОВНИЙ ЗАГОЛОВОК -->
+								<div data-fls-titleblock="" class="titleblock titleblock--big">
+									<span class="titleblock__label titleblock__label--big">REAL ESTATE</span>
+									<h1 data-fls-watcher="" data-fls-watcher-once="" class="titleblock__title titleblock__title--big">
+										Let's hunt for your
+										<span>dream residence</span>
+									</h1>
+									<div data-fls-watcher="" data-fls-watcher-once="" class="titleblock__text">
+										<p>
+											Explore our range of beautiful properties with the addition of separate accommodation suitable for you.
+										</p>
+									</div>
+								</div>
+							</div>
+							<!-- Б Л О К з ЗОБРАЖЕННЯМ -->
+							<div class="hero__block-img">
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/hero-600.webp" type="image/webp">
+									<img class="hero__image" alt="House" src="./assets/img/hero.webp">
+								</picture>
+							</div>
+						</div>
+					</section>
+					<!-- ------------------------------------------------------------------------------------ -->
+					<!-- ====== 2 - секція DISCOVER ===== -->
+					<section id="discover" class="discover">
+						<div class="discover__container">
+							<!-- ====== БЛОК ЗАГОЛОВКУ (менший шрифт) -->
+							<div class="discover__block titleblock">
+								<div data-fls-titleblock="" class="titleblock titleblock--button">
+									<div class="titleblock__content">
+										<span class="titleblock__label">DISCOVER</span>
+										<h2 data-fls-watcher="" data-fls-watcher-once="" class="titleblock__title">Best recomendation</h2>
+										<div data-fls-watcher="" data-fls-watcher-once="" class="titleblock__text titleblock__text--button">
+											<p>
+												Discover our exclusive selection of the finest one-of-a-kind luxury properties architectural masterpieces.
+											</p>
+										</div>
+									</div>
+									<a href="#" data-fls-button="" class="button button--learn">Learn More</a>
+								</div>
+							</div>
+							<!-- ====== К А Р Т О Ч К И ====== -->
+							<div class="discover-card">
+								<div class="discover-card__content">
+									<!-- 1 Карточка -->
+									<!-- КАРТОЧКА будинку, код ПРОДУБЛЬОВАНИЙ на головну сторінку index.html і там вносити зміни на посилання -->
+									<article data-fls-propertycard="" data-fls-border="" class="propertycard">
+										<a href="#" class="propertycard__link-image">
+											<picture>
+												<img class="propertycard__image" alt="Perum griya asri" src="./assets/img/card/griyai.webp">
+											</picture>
+										</a>
+										<!-- ОБГОРТКА додаткова для тексту -->
+										<div class="propertycard__body">
+											<!-- Заголовок, як посилання (клікабельний) -->
+											<h2 data-fls-title="" class="propertycard__title">
+												<a href="#" class="propertycard__link-title">Perum griya asri</a>
+											</h2>
+											<!-- Текст -->
+											<div class="propertycard__text">
+												<p>Bogor, Jawa Barat</p>
+											</div>
+											<!-- БЛОК з Цінами -->
+											<div class="propertycard__details details-price">
+												<p class="details-price__price">$25,000</p>
+												<div class="details-price__area-price area-price">
+													<p class="area-price__area-value">
+														360
+														<span>m²</span>
+													</p>
+													<div class="area-price__area-label">Living Area</div>
+												</div>
+											</div>
+										</div>
+										<!-- Кнопка (клікабельна) -->
+										<a href="#" data-fls-border="" class="propertycard__button">Send Inquiry</a>
+									</article>
+									<!-- 2 Карточка -->
+									<!-- КАРТОЧКА будинку, код ПРОДУБЛЬОВАНИЙ на головну сторінку index.html і там вносити зміни на посилання -->
+									<article data-fls-propertycard="" data-fls-border="" class="propertycard">
+										<a href="#" class="propertycard__link-image">
+											<picture>
+												<img class="propertycard__image" alt="Perum kencana asri" src="./assets/img/card/kencana.webp">
+											</picture>
+										</a>
+										<!-- ОБГОРТКА додаткова для тексту -->
+										<div class="propertycard__body">
+											<!-- Заголовок, як посилання (клікабельний) -->
+											<h2 data-fls-title="" class="propertycard__title">
+												<a href="#" class="propertycard__link-title">Perum kencana asri</a>
+											</h2>
+											<!-- Текст -->
+											<div class="propertycard__text">
+												<p>Bogor, Jawa Barat</p>
+											</div>
+											<!-- БЛОК з Цінами -->
+											<div class="propertycard__details details-price">
+												<p class="details-price__price">$35,000</p>
+												<div class="details-price__area-price area-price">
+													<p class="area-price__area-value">
+														360
+														<span>m²</span>
+													</p>
+													<div class="area-price__area-label">Living Area</div>
+												</div>
+											</div>
+										</div>
+										<!-- Кнопка (клікабельна) -->
+										<a href="#" data-fls-border="" class="propertycard__button">Send Inquiry</a>
+									</article>
+									<!-- 3 Карточка -->
+									<!-- КАРТОЧКА будинку, код ПРОДУБЛЬОВАНИЙ на головну сторінку index.html і там вносити зміни на посилання -->
+									<article data-fls-propertycard="" data-fls-border="" class="propertycard">
+										<a href="#" class="propertycard__link-image">
+											<picture>
+												<img class="propertycard__image" alt="Perum rakjel elit" src="./assets/img/card/rakjel.webp">
+											</picture>
+										</a>
+										<!-- ОБГОРТКА додаткова для тексту -->
+										<div class="propertycard__body">
+											<!-- Заголовок, як посилання (клікабельний) -->
+											<h2 data-fls-title="" class="propertycard__title">
+												<a href="#" class="propertycard__link-title">Perum rakjel elit</a>
+											</h2>
+											<!-- Текст -->
+											<div class="propertycard__text">
+												<p>Bogor, Jawa Barat</p>
+											</div>
+											<!-- БЛОК з Цінами -->
+											<div class="propertycard__details details-price">
+												<p class="details-price__price">$40,000</p>
+												<div class="details-price__area-price area-price">
+													<p class="area-price__area-value">
+														360
+														<span>m²</span>
+													</p>
+													<div class="area-price__area-label">Living Area</div>
+												</div>
+											</div>
+										</div>
+										<!-- Кнопка (клікабельна) -->
+										<a href="#" data-fls-border="" class="propertycard__button">Send Inquiry</a>
+									</article>
+									<!-- ------------------------------ -->
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- ------------------------------------------------------------------------------------ -->
+					<!-- ====== 3 - секція OUR ADVANTES ===== -->
+					<section id="advantes-block" class="advantes-block">
+						<div class="advantes-block__container">
+							<!-- Обгортка для текстового блоку -->
+							<div class="advantes-block__titleblock">
+								<!-- 3 ====== ТРЕТІЙ блок ЗАГОЛОВКУ (без лейбла) -->
+								<div data-fls-titleblock="" class="titleblock">
+									<span class="titleblock__label">OUR ADVANTES</span>
+									<h2 data-fls-watcher="" data-fls-watcher-once="" class="titleblock__title">Giving you peace of mind</h2>
+								</div>
+							</div>
+							<!-- ====== БЛОК з К А Р Т О Ч К И ====== -->
+							<div class="advantes-block__cards cards">
+								<div class="cards__content">
+									<!-- ======= 1 Карточка САМОСТІЙНИЙ блок -->
+									<article data-fls-advantes="" class="advantes">
+										<div class="advantes__container">
+											<img class="advantes__icon" src="./assets/img/icons/heart.svg" alt="Heart">
+											<h3 class="advantes__title">Comfortable</h3>
+											<div class="advantes__subtitle">
+												<p>
+													Enjoy lifestyle amenities designed to provide every homeowners modern comfort, a stones throw away from schools, churches, and hospitals.
+												</p>
+											</div>
+										</div>
+									</article>
+									<!-- ======= 2 Карточка -->
+									<article data-fls-advantes="" class="advantes">
+										<div class="advantes__container">
+											<img class="advantes__icon" src="./assets/img/icons/shield_done.svg" alt="Shield done">
+											<h3 class="advantes__title">Extra security</h3>
+											<div class="advantes__subtitle">
+												<p>
+													You can connect with potential tenants without having to share your phone number. We also require all users to register to validate their legitimacy.
+												</p>
+											</div>
+										</div>
+									</article>
+									<!-- ======= 3 Карточка -->
+									<article data-fls-advantes="" class="advantes">
+										<div class="advantes__container">
+											<img class="advantes__icon" src="./assets/img/icons/star.svg" alt="Star">
+											<h3 class="advantes__title">Luxury</h3>
+											<div class="advantes__subtitle">
+												<p>
+													Find out how we provide the highest standard of professional property management to give you all the benefits of property.
+												</p>
+											</div>
+										</div>
+									</article>
+									<!-- ======= 4 Карточка -->
+									<article data-fls-advantes="" class="advantes">
+										<div class="advantes__container">
+											<img class="advantes__icon" src="./assets/img/icons/ticket_star.svg" alt="Best price">
+											<h3 class="advantes__title">Best price</h3>
+											<div class="advantes__subtitle">
+												<p>
+													Not sure what you should be charging for your property? Let us do the numbers for you—contact us today for a free rental appraisal on your home.
+												</p>
+											</div>
+										</div>
+									</article>
+									<!-- ===== 5 Карточка -->
+									<article data-fls-advantes="" class="advantes">
+										<div class="advantes__container">
+											<img class="advantes__icon" src="./assets/img/icons/location.svg" alt="Location">
+											<h3 class="advantes__title">Strategic location</h3>
+											<div class="advantes__subtitle">
+												<p>
+													located in the city center close to the shopping center. Very good for areas surrounded by international education centers, start-up office centers.
+												</p>
+											</div>
+										</div>
+									</article>
+									<!-- 6 Карточка -->
+									<article data-fls-advantes="" class="advantes">
+										<div class="advantes__container">
+											<img class="advantes__icon" src="./assets/img/icons/graph.svg" alt="Graph">
+											<h3 class="advantes__title">Efficient</h3>
+											<div class="advantes__subtitle">
+												<p>
+													Schedule visits to multiple properties at once in one day without having to call them one by one. Check everything and find the best properties for rent
+												</p>
+											</div>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- ====== 4 - секція ABOUT US ======== -->
+					<section id="about-us" class="about-us">
+						<div class="about-us__container">
+							<div class="about-us__content">
+								<div class="about-us__image">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/about/about-us-600.webp" type="image/webp">
+										<img class="about-us__img" alt="About us" src="./assets/img/about/about-us.webp">
+									</picture>
+								</div>
+								<div class="about-us__text-block">
+									<div data-fls-titleblock="" class="titleblock">
+										<span class="titleblock__label">ABOUT US</span>
+										<h2 data-fls-watcher="" data-fls-watcher-once="" class="titleblock__title">How much is your property worth now?</h2>
+										<div data-fls-watcher="" data-fls-watcher-once="" class="titleblock__text">
+											<p>
+												We have built our reputation as true local area experts. We have gained more knowledge about buyer interests, our neighborhood and the
+								market than any other brand because we live locally and work for local people.
+											</p>
+										</div>
+									</div>
+									<!-- КНОПКИ Learn More велика -->
+									<a href="#" data-fls-button="" class="button button--learn-big">Learn More</a>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- ====== 5 - секція ABOUTCR-SAY ======== -->
+					<section id="about-say" class="about-say">
+						<div class="about-say__container">
+							<div class="about-say__title">
+								<div data-fls-titleblock="" class="titleblock">
+									<span class="titleblock__label">CUSTOMER TESTIMONIAL</span>
+									<h2 data-fls-watcher="" data-fls-watcher-once="" class="titleblock__title">People say about us?</h2>
+								</div>
+							</div>
+							<div class="about-say__cards-say cards-say">
+								<!-- ======= 1 КАРТОЧКА ======= -->
+								<article data-fls-about="" class="about">
+									<div class="about__container">
+										<div class="about__icon">
+											<img src="./assets/img/icons/quote-icon.svg" alt="Quote icon">
+										</div>
+										<!-- Текстова частина -->
+										<div class="about__body">
+											<h4 class="about__title">It proved to be exactly the kind of home we wanted.</h4>
+											<div class="about__text">
+												<p>
+													We wish to express our thanks for your hard work in finding us a temporary home, which proved to be exactly what we wanted
+												</p>
+											</div>
+										</div>
+										<!-- Блок автора -->
+										<div class="about__author author-reviews">
+											<div class="author-reviews__avatar">
+												<picture>
+													<img alt="Jaydon Aminoff" src="./assets/img/avatar/jaydon.webp">
+												</picture>
+											</div>
+											<div class="author-reviews__body">
+												<div class="author-reviews__name">Jaydon Aminoff</div>
+												<div class="author-reviews__position">UX Designer</div>
+											</div>
+										</div>
+									</div>
+								</article>
+								<!-- ------------------------ -->
+								<!--
+<article data-fls-about class="about">
+<div class="about__container">
+<div class="about__icon">
+<img src="@img/icons/quote-icon.svg" alt="Quote icon" />
+</div>
+<div class="about__body">
+<h4 class="about__title">It proved to be exactly the kind of home we wanted.</h4>
+<div class="about__text">
+<p>We wish to express our thanks for your hard work in finding us a temporary home, which proved to be exactly what we wanted.</p>
+</div>
+</div>
+<div class="about__author author-reviews">
+<div class="author-reviews__avatar">
+<img src="@img/avatar/jaydon.png" alt="Jaydon Aminoff" />
+</div>
+<div class="author-reviews__body">
+<div class="author-reviews__name">Jaydon Aminoff</div>
+<div class="author-reviews__position">UX Designer</div>
+</div>
+</div>
+</div>
+</article>
+-->
+								<!-- ======= 2 КАРТОЧКА ======= -->
+								<article data-fls-about="" class="about">
+									<div class="about__container">
+										<div class="about__icon">
+											<img src="./assets/img/icons/quote-icon.svg" alt="Quote icon">
+										</div>
+										<!-- Текстова частина -->
+										<div class="about__body">
+											<h4 class="about__title">Nobody knows Portland and the peninsula better than David.</h4>
+											<div class="about__text">
+												<p>
+													My wife and I had a dream of downsizing from our house in Cape Elizabeth into a small condo closer to where we work and play in Portland.
+												</p>
+											</div>
+										</div>
+										<!-- Блок автора -->
+										<div class="about__author author-reviews">
+											<div class="author-reviews__avatar">
+												<picture>
+													<img alt="Alfredo Donin" src="./assets/img/avatar/alfredo.webp">
+												</picture>
+											</div>
+											<div class="author-reviews__body">
+												<div class="author-reviews__name">Alfredo Donin</div>
+												<div class="author-reviews__position">UI Designer</div>
+											</div>
+										</div>
+									</div>
+								</article>
+								<!-- ------------------------ -->
+								<!--
+<article data-fls-about class="about">
+<div class="about__container">
+<div class="about__icon">
+<img src="@img/icons/quote-icon.svg" alt="Quote icon" />
+</div>
+<div class="about__body">
+<h4 class="about__title">It proved to be exactly the kind of home we wanted.</h4>
+<div class="about__text">
+<p>We wish to express our thanks for your hard work in finding us a temporary home, which proved to be exactly what we wanted.</p>
+</div>
+</div>
+<div class="about__author author-reviews">
+<div class="author-reviews__avatar">
+<img src="@img/avatar/jaydon.png" alt="Jaydon Aminoff" />
+</div>
+<div class="author-reviews__body">
+<div class="author-reviews__name">Jaydon Aminoff</div>
+<div class="author-reviews__position">UX Designer</div>
+</div>
+</div>
+</div>
+</article>
+-->
+								<!-- ======= 3 КАРТОЧКА ======= -->
+								<article data-fls-about="" class="about">
+									<div class="about__container">
+										<div class="about__icon">
+											<img src="./assets/img/icons/quote-icon.svg" alt="Quote icon">
+										</div>
+										<!-- Текстова частина -->
+										<div class="about__body">
+											<h4 class="about__title">He keeps his client’s best interests in sharp focus.</h4>
+											<div class="about__text">
+												<p>
+													After working with David to sell my home in 2013, I was convinced that he’s the only realtor I’ll ever need. Since then, I’ve bought two properties and sold one.
+												</p>
+											</div>
+										</div>
+										<!-- Блок автора -->
+										<div class="about__author author-reviews">
+											<div class="author-reviews__avatar">
+												<picture>
+													<img alt="Makenna Korsgaard" src="./assets/img/avatar/makenna.webp">
+												</picture>
+											</div>
+											<div class="author-reviews__body">
+												<div class="author-reviews__name">Makenna Korsgaard</div>
+												<div class="author-reviews__position">UX Researcher</div>
+											</div>
+										</div>
+									</div>
+								</article>
+								<!-- ------------------------ -->
+								<!--
+<article data-fls-about class="about">
+<div class="about__container">
+<div class="about__icon">
+<img src="@img/icons/quote-icon.svg" alt="Quote icon" />
+</div>
+<div class="about__body">
+<h4 class="about__title">It proved to be exactly the kind of home we wanted.</h4>
+<div class="about__text">
+<p>We wish to express our thanks for your hard work in finding us a temporary home, which proved to be exactly what we wanted.</p>
+</div>
+</div>
+<div class="about__author author-reviews">
+<div class="author-reviews__avatar">
+<img src="@img/avatar/jaydon.png" alt="Jaydon Aminoff" />
+</div>
+<div class="author-reviews__body">
+<div class="author-reviews__name">Jaydon Aminoff</div>
+<div class="author-reviews__position">UX Designer</div>
+</div>
+</div>
+</div>
+</article>
+-->
+							</div>
+						</div>
+					</section>
+					<!--
+====== 6 - секція FOOTER
+</main>
+-->
+				</main>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div class="footer__body body-footer">
+						<div class="body-footer__content content-footer">
+							<!-- Логотип зверху зліва -->
+							<a href="index.html" class="content-footer__link-logo">
+								<img class="content-footer__logo" src="./assets/img/logo.svg" alt="logo">
+							</a>
+							<!-- Текстова частина -->
+							<!-- FORM -->
+							<div class="content-footer__body">
+								<!-- ============== ФОРМА блок =================== -->
+								<div class="content-footer__form form-contacts">
+									<div class="form-contacts__header">
+										<div data-fls-label="" class="form-contacts__label">We have built our reputation as true local area experts.</div>
+										<h2 data-fls-title="" class="form-contacts__title">Newsletter</h2>
+									</div>
+									<!-- ============== ФОРМА =================== -->
+									<form data-fls-form="ajax" data-fls-form-popup="popup" method="POST" action="/sendmail/index.php" class="form-contacts__body">
+										<!-- 1-й рядок форми -->
+										<div class="form-contacts__line">
+											<input data-fls-form-errtext="E-mail error" data-fls-input="" required type="email" placeholder="Input your email" name="email" class="form-contacts__input">
+										</div>
+										<!-- 2-й рядок форми КНОПКА -->
+										<button type="submit" class="form-contacts__button button button--lite">Send</button>
+									</form>
+								</div>
+								<!-- ============== ФОРМА ЗАВЕРШЕННЯ БЛОКУ =================== -->
+							</div>
+						</div>
+						<!-- ======== ТРИ БЛОКИ ФУТЕРА ======== -->
+						<!-- підключення СПОЙЛЕРa в адаптиві data-fls-spollers -->
+						<div data-fls-spollers="500" class="body-footer__menus">
+							<!-- 1- БЛОК МЕНЮ -->
+							<!-- БЛОК меню PAGES -->
+							<!-- "details" - може розкривати меню на мобільному -->
+							<details class="body-footer__menu">
+								<!-- ЗАГОЛОВОК колонки Page де треба НАТИСКАТИ -->
+								<!-- summary" - це назва колонки: Pages, CMS або Utility Pages. -->
+								<summary>
+									<h5 class="body-footer__title">Menu</h5>
+								</summary>
+								<ul class="body-footer__list">
+									<li class="body-footer__item">
+										<a href="#hero" class="body-footer__link">Home</a>
+									</li>
+									<li class="body-footer__item">
+										<a href="#discover" class="body-footer__link">Discover</a>
+									</li>
+									<li class="body-footer__item">
+										<a href="#advantes-block" class="body-footer__link">Advantes</a>
+									</li>
+									<li class="body-footer__item">
+										<a href="#about-us" class="body-footer__link">About</a>
+									</li>
+									<li class="body-footer__item">
+										<a href="#about-say" class="body-footer__link">Reviews</a>
+									</li>
+									<!-- Кнопка в меню -->
+								</ul>
+							</details>
+							<!-- ---------2-й БЛОК МЕНЮ CMS -->
+							<details class="body-footer__menu">
+								<!-- ЗАГОЛОВОК колонки Page -->
+								<summary>
+									<h5 class="body-footer__title">Community</h5>
+								</summary>
+								<!-- СПИСОК пунктів -->
+								<ul class="body-footer__list">
+									<li class="body-footer__item">
+										<a href="work.html" class="body-footer__link">Find agents</a>
+									</li>
+									<li class="body-footer__item">
+										<a href="singlework.html" class="body-footer__link">Lifestyle</a>
+									</li>
+									<li class="body-footer__item">
+										<a href="blog.html" class="body-footer__link">Blog</a>
+									</li>
+									<li class="body-footer__item">
+										<a href="blogpage.html" class="body-footer__link">Legal notic</a>
+									</li>
+								</ul>
+							</details>
+							<!-- 3-й - БЛОК соц мереж -->
+							<!-- БЛОК з соц_мережами вертикальний -->
+							<div class="body-footer__social-block social-block">
+								<h5 class="social-block__title">Follow us on</h5>
+								<ul data-fls-social="" class="social-block__social social social--text">
+									<li class="social__item">
+										<a href="#" target="_blank" class="social__link">
+											<!-- <img src="../assets/svgicons/insta.svg" alt="Instagram" /> -->
+											<img src="./assets/img/icons/insta.svg" alt="Instagram">
+										</a>
+									</li>
+									<li class="social__item">
+										<a href="#" target="_blank" class="social__link social__link--icon-s-tw">
+											<img src="./assets/img/icons/youtube.svg" alt="Youtube">
+										</a>
+									</li>
+									<li class="social__item">
+										<a href="#" target="_blank" class="social__link social__link--icon-s-drb">
+											<img src="./assets/img/icons/facebook.svg" alt="Fcebook">
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- 3-й - БЛОК соц мереж -->
+						<!-- БЛОК з соц_мережами вертикальний -->
+						<!--
+<div class="body-footer__social-block social-block">
+<h5 class="social-block__title">Follow us on</h5>
+<ul data-fls-social class="social-block__social social social--text">
+<li class="social__item">
+<a href="#" target="_blank" class="social__link social__link--icon-s-inst">111111</a>
+</li>
+<li class="social__item">
+<a href="#" target="_blank" class="social__link social__link--icon-s-tw">222222</a>
+</li>
+<li class="social__item">
+<a href="#" target="_blank" class="social__link social__link--icon-s-drb">333333</a>
+</li>
+</ul>
+</div>
+-->
+					</div>
+					<!-- Нижній рядок футера -->
+					<div class="footer__bottom bottom-footer">
+						<div class="bottom-footer__copy">© 2026 Developed by LilaL</div>
+						<!-- Скролити до: data-fls-scrollto ...до main -->
+						<div class="bottom-footer__arrow">
+							<a href="#" data-fls-scrollto="main" data-fls-button="" class="bottom-footer__up button">To Top</a>
+							<img href="#" data-fls-scrollto="main" src="./assets/img/icons/arrow_up.svg" alt="Instagram">
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
