@@ -307,8 +307,9 @@ body {
 .titleblock__title {
   font-family: var(--font-rubik);
   color: var(--color-title);
+}
+.titleblock__title {
   font-weight: 600;
-  font-size: 3rem;
   line-height: 1.16;
 }
 .titleblock__title--big {
@@ -1020,6 +1021,9 @@ textarea.input {
     align-items: center;
     text-align: center;
   }
+  .propertycard__title {
+    min-height: 1.95rem;
+  }
   .details-price {
     flex-direction: column;
   }
@@ -1038,6 +1042,9 @@ textarea.input {
 }@media (width < 20em){
   .discover-card__content {
     gap: 1.25rem;
+  }
+  .titleblock__title {
+    font-size: 2.25rem;
   }
   .titleblock__title--big {
     font-size: 2.25rem;
@@ -1095,6 +1102,9 @@ textarea.input {
 }@media (width >= 20em) and (width < 76.625em){
   .discover-card__content {
     gap: clamp( 1.25rem , 0.940949227375rem  +  1.5452538631vw , 2.125rem );
+  }
+  .titleblock__title {
+    font-size: clamp( 2.25rem , 1.98509933775rem  +  1.3245033113vw , 3rem );
   }
   .titleblock__title--big {
     font-size: clamp( 2.25rem , 1.63189845474375rem  +  3.0905077263vw , 4rem );
@@ -1164,6 +1174,9 @@ textarea.input {
 }@media (width >= 76.625em){
   .discover-card__content {
     gap: 2.125rem;
+  }
+  .titleblock__title {
+    font-size: 3rem;
   }
   .titleblock__title--big {
     font-size: 4rem;
