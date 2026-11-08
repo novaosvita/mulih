@@ -205,11 +205,7 @@ body {
   flex-direction: row;
 }
 
-.advantes-block {
-  border: 0.0625rem solid green;
-}
 .advantes-block__container {
-  border: 0.125rem solid rgb(6, 6, 230);
   background-color: var(--bg-label);
 }
 .advantes-block__titleblock {
@@ -225,19 +221,14 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(min(23.125rem, 100%), 1fr));
 }
 
-.about-us {
-  border: 0.0625rem solid green;
-}
 .about-us__container {
   margin-top: 13.6875rem;
   margin-bottom: 7.5rem;
-  border: 0.125rem solid rgb(6, 6, 230);
 }
 .about-us__content {
   display: flex;
   align-items: center;
   gap: 3.5rem;
-  width: 100%;
 }
 .about-us__image {
   flex: 0 0 calc(50% - 1.25rem); /* Чітко 50% ширини з урахуванням gap */
@@ -248,6 +239,11 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+.about-us__text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .about-us .titleblock {
   margin-bottom: 3rem;
@@ -294,7 +290,7 @@ body {
   text-transform: uppercase;
   color: var(--color-label);
   padding: 0.75rem 1.5rem;
-  background-color: var(--bg-button);
+  background-color: var(--bg-main-color);
 }
 .titleblock__label--big {
   margin-bottom: 1rem;
@@ -932,10 +928,41 @@ textarea.input {
   .discover-card__content {
     flex-direction: column;
   }
+  .cards {
+    padding-bottom: 1.875rem;
+  }
+  .about-us__container {
+    margin-top: 6.25rem;
+  }
+  .about-us__content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .about-us__image {
+    width: 100%;
+    min-width: 100%;
+    margin-left: auto;
+    margin-right: auto; /* Центруємо картинку, якщо вона менша за ширину екрана */
+  }
+  .about-us__text-block {
+    align-items: flex-end;
+  }
+  .about-us__text-block .button--learn-big {
+    align-self: flex-end;
+  }
+  .titleblock {
+    gap: 0.625rem;
+  }
+  .titleblock--button {
+    gap: 1.875rem;
+  }
   .titleblock {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+  .titleblock__label {
+    margin-bottom: 0.9375rem;
   }
   .menu {
     flex-grow: 1;
